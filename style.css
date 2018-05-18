@@ -1,0 +1,141 @@
+body{
+    background-color: #eee;
+    font-family: sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    margin-top:50px;
+}
+.container{
+    overflow-y: hidden;
+    background-color: #fff;
+    max-width: 600px;
+ position: relative;
+    margin: 0 auto;
+   margin-top:50px;
+}
+
+input[type=text]{
+    padding: 20px 10px;
+    width: 100%;
+    border: 0;
+    background-color: #333;
+    color:#fff;
+ }
+
+input[type=chcekbox]{
+    display: none;
+}
+ul{
+    list-style-type: none;
+}
+
+ul li{
+    background-color: #d1f0fa;
+    padding: 15px 10px;
+    border-left:3px solid #03c7ff;
+    margin: 2px auto;
+}
+
+
+.fa-times-circle{
+    float:right;
+    cursor:pointer;
+    font-size: 20px;
+    color:#fff;
+}
+
+.box {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.box input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.box:hover input ~ .checkmark {
+    background-color: #aae9fc;
+}
+
+.box input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.box input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.box .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.alert{
+    background-color: #edb569;
+    position: absolute;
+    color:#333;
+    z-index: 1;
+    left:5px;
+    padding: 3px;
+    top:40px;
+    font-size: 12px;
+    box-shadow: 0 0 3px;
+}
+
+.alert-in-enter-active{
+    animation: bounce-in .5s;
+}
+
+.alert-in-leave-active{
+    animation: bounce-in .5s reverse;
+}
+
+footer{
+    padding: 20px 10px;;
+}
+
+@keyframes bounce-in{
+    0%{ transform: scale(0);}
+    50%{ transform: scale(1.5);}
+    100%{ transform: scale(1);}
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+      <h1>Todo List</h1>
+       <div class="container">
+        <div>
+            <input type="text" v-model="newTodo" placeholder="What needs to be done?" @keyup.enter="addTodo">
+            <transition name="alert-in">
+                <p v-if="newTodo.length<3" class="alert">The text must be at least 3 characters long.</p>
+            </transition>
+
+        </div>
+        <ul>
+            
+     <transition-group name="list" 
+      leave-active-class="animated bounceOutDown"
+     enter-active-class="animated bounceInUp"
+    >
+                <li v-for="(todo, index) in todos" :key="index">
+                    <label class="box">{{todo.name}} 
+                       <input type="checkbox" v-model="todo.dane">
+                      <span class="checkmark"></span>
+                         <span @click="removeTodo(index)" class="fas fa-times-circle"></span>
+                      </label>
+                </li>
+     </transition-group>
+
+        </ul>
+        <footer class="info">
+         <p>Copyright by &copy; Arkadiusz Wierzbicki</p>    
+        </footer>
+    </div>
+    </div>
+
+    <script src="vue.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
