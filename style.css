@@ -38,7 +38,7 @@ input[type=text] {
     position: absolute;
     top: 15px;
     right: 10px;
-    color: #fff;
+    color: #ddd;
     font-size: 25px;
     cursor: pointer;
 }
